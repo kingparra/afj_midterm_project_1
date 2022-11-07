@@ -1,0 +1,78 @@
+Results from "Create VPC and more"
+**********************************
+
+
+VPC setup
+---------
+* Create VPC: vpc-0f33bee8840dc9a20
+* Enable DNS hostnames
+* Enable DNS resolution
+* Verifying VPC creation: vpc-0f33bee8840dc9a20
+
+
+Subnet setup
+------------
+* Create subnet:
+  midterm-subnet-public1-us-east-1a
+  subnet-0c9e06017eba2d0fb
+
+* Create subnet:
+  midterm-subnet-public2-us-east-1b
+  subnet-03b9c803fafb82de5
+
+* Create subnet:
+  midterm-subnet-private1-us-east-1a
+  subnet-018236422151345f7
+
+* Create subnet:
+  midterm-subnet-private2-us-east-1b
+  subnet-0ba3d357be0deb0de
+
+
+IGW setup
+---------
+* Create internet gateway:
+  midterm-igw
+  igw-0648998e66b138410
+* Attach internet gateway to the VPC
+
+
+IGW RT setup
+------------
+* Create route table:
+  midterm-rtb-public
+  rtb-05017698ed8b0d36f
+* Create route
+* Associate route table
+* Associate route table
+
+
+EIP setup
+---------
+* Allocate elastic IP:
+  midterm-eip-us-east-1a
+  eipalloc-0a4279b682d877856
+
+
+NGW setup
+---------
+* Create NAT gateway:
+  midterm-nat-public1-us-east-1a
+  nat-00336a33032ea1b95
+* Wait NAT Gateways to activate
+
+
+NGW RT setup
+------------
+* Create route table:
+  midterm-rtb-private1-us-east-1a
+  rtb-0c878fd2064022d80
+* Create route
+* Associate route table
+
+* Create route table:
+  midterm-rtb-private2-us-east-1b
+  rtb-08840b3dbc414d5b1
+* Create route
+* Associate route table
+* Verifying route table creation
