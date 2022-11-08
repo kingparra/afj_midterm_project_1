@@ -38,15 +38,16 @@ provider "aws" {
 ################
 module "prerequistes" {
   source = "./modules/prerequisites"
-  lab = var.labname
+  vpc_id = "midterm-vpc"
+  labname = var.labname
   session = var.session
 }
 
 # 2 Create a vpc with private and public subnets
 ################################################
-# module "network" {
-#   source = "./modules/network"
-# }
+module "network" {
+  source = "./modules/network"
+}
 
 # 3 Create a vpc security group for a public web server
 #######################################################

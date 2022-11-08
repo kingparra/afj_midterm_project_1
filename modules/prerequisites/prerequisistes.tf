@@ -31,7 +31,6 @@ variable "account_details" {
   }
 }
 
-
 provider "aws" {
   region                   = var.account_details.region
   shared_config_files      = var.account_details.shared_config_files
@@ -43,9 +42,6 @@ provider "aws" {
     }
   }
 }
-
-variable "lab" {}
-variable "session" {}
 
 resource "random_pet" "webapp_bucket_petname" {
   keepers = {
