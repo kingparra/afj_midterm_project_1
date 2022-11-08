@@ -1,3 +1,3 @@
-variable "vpc_id" {}
+variable "account_details" {}
 variable "labname" {}
 variable "session" {}

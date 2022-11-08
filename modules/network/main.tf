@@ -28,7 +28,7 @@ provider "aws" {
   shared_credentials_files = var.account_details.shared_credentials_files
   default_tags {
     tags = {
-      Lab = var.lab
+      Lab = var.labname
       Session = var.session
     }
   }
