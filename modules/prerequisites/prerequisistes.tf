@@ -22,15 +22,6 @@ terraform {
   }
 }
 
-variable "account_details" {
-  description = "Config and creds for the aws account"
-  default = {
-    "region"                   = "us-east-1"
-    "shared_config_files"      = ["/home/chris/.aws/config"]
-    "shared_credentials_files" = ["/home/chris/.aws/credentials"]
-  }
-}
-
 provider "aws" {
   region                   = var.account_details.region
   shared_config_files      = var.account_details.shared_config_files
