@@ -49,6 +49,7 @@ module "prerequistes" {
 module "network" {
   labname = var.labname
   session = var.session
+  eip_id = module.prerequistes.eip_id
   account_details = var.account_details
   source = "./modules/network"
 }
