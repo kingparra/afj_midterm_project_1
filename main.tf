@@ -39,16 +39,17 @@ provider "aws" {
 module "prerequistes" {
   labname = var.labname
   session = var.session
-  vpc_id = "midterm-vpc"
+  vpc_id = module.network.vpc_id
+  account_details = var.account_details
   source = "./modules/prerequisites"
 }
 
 # 2 Create a vpc with private and public subnets
 ################################################
 module "network" {
-  account_details = var.account_details
   labname = var.labname
   session = var.session
+  account_details = var.account_details
   source = "./modules/network"
 }
 

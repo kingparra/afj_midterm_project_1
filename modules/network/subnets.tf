@@ -1,5 +1,4 @@
 # Create subnet: subnet-0c9e06017eba2d0fb
-
 resource "aws_subnet" "subnet-0c9e06017eba2d0fb-midterm-subnet-public1-us-east-1a" {
     vpc_id                  = aws_vpc.midterm-vpc.id
     cidr_block              = "10.0.0.0/20"
