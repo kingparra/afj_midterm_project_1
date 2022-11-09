@@ -71,15 +71,23 @@ module "db_security_group" {
 
 # 5 Create a DB subnet group
 ############################
-# module "db_subnet_group" {
-#   source = "./modules/db_subnet_group/db_subnet_group.tf"
-# }
+module "db_subnet_group" {
+  subnet_private1_id = module.network.subnet_private1_id
+  subnet_private2_id = module.network.subnet_private2_id
+  source = "./modules/db_subnet_group"
+}
 
 # 6 Now lets create a DB instance
 #################################
+# module "db_instance" {
+#   source = "./modules/db_instance"
+# }
 
 # 7 Now create an ec2 instance and install a web server
 #######################################################
+# module "ec2_instance" {
+#   source = "./modules/ec2_instance"
+# }
 
 
 # 8 Connect your apache web server to your db instance
