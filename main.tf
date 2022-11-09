@@ -63,9 +63,11 @@ module "webserver_security_group" {
 
 # 4 Create a vpc security group for a private DB instance
 #########################################################
-# module "db_security_group" {
-#   source = "./modules/db_security_group/db_security_group.tf"
-# }
+module "db_security_group" {
+  vpc_id = module.network.vpc_id
+  webserver_security_group_id = module.webserver_security_group.webserver_security_group_id
+  source = "./modules/db_security_group"
+}
 
 # 5 Create a DB subnet group
 ############################

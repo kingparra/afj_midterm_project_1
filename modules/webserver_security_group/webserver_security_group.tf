@@ -1,4 +1,4 @@
-resource "aws_security_group" "webserver_sg" {
+resource "aws_security_group" "webserver_security_group" {
     name        = "tutorial-securitygroup"
     description = "Tutorial Security Group"
     vpc_id      = var.vpc_id
