@@ -1,9 +1,7 @@
 # Associate route table
 resource "aws_route_table_association" "midterm-rtb-public-rtbassoc-041bd566420f8e9f7" {
-    # midterm-rtb-public
-    route_table_id = "rtb-05017698ed8b0d36f"
-    # midterm-subnet-public2-us-east-1b
-    subnet_id = "subnet-03b9c803fafb82de5"
+    route_table_id = aws_route_table.midterm-rtb-public.id
+    subnet_id = aws_subnet.subnet-03b9c803fafb82de5-midterm-subnet-public2-us-east-1b.id
 }
 
 # Associate route table
