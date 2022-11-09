@@ -1,7 +1,7 @@
 resource "aws_security_group" "webserver_sg" {
     name        = "tutorial-securitygroup"
     description = "Tutorial Security Group"
-    vpc_id      = aws_vpc.midterm-vpc.id
+    vpc_id      = var.vpc_id
     ingress {
         from_port       = 80
         to_port         = 80
