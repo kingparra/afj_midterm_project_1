@@ -56,9 +56,9 @@ module "network" {
 
 # 3 Create a vpc security group for a public web server
 #######################################################
-module "vpcsg" {
+module "webserver_security_group" {
   vpc_id = module.network.vpc_id
-  source = "./modules/vpcsg/"
+  source = "./modules/webserver_security_group"
 }
 
 # 4 Create a vpc security group for a private DB instance
