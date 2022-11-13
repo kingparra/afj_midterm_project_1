@@ -56,26 +56,26 @@ module "network" {
 
 # 3 Create a vpc security group for a public web server
 #######################################################
-module "webserver_security_group" {
-  vpc_id = module.network.vpc_id
-  source = "./modules/webserver_security_group"
-}
+# module "webserver_security_group" {
+#   vpc_id = module.network.vpc_id
+#   source = "./modules/webserver_security_group"
+# }
 
 # 4 Create a vpc security group for a private DB instance
 #########################################################
-module "db_security_group" {
-  vpc_id = module.network.vpc_id
-  webserver_security_group_id = module.webserver_security_group.webserver_security_group_id
-  source = "./modules/db_security_group"
-}
+# module "db_security_group" {
+#   vpc_id = module.network.vpc_id
+#   webserver_security_group_id = module.webserver_security_group.webserver_security_group_id
+#   source = "./modules/db_security_group"
+# }
 
 # 5 Create a DB subnet group
 ############################
-module "db_subnet_group" {
-  subnet_private1_id = module.network.subnet_private1_id
-  subnet_private2_id = module.network.subnet_private2_id
-  source = "./modules/db_subnet_group"
-}
+# module "db_subnet_group" {
+#   subnet_private1_id = module.network.subnet_private1_id
+#   subnet_private2_id = module.network.subnet_private2_id
+#   source = "./modules/db_subnet_group"
+# }
 
 # 6 Now lets create a DB instance
 #################################

@@ -2,8 +2,8 @@
 resource "aws_route_table" "midterm-rtb-public" {
     vpc_id     = aws_vpc.midterm-vpc.id
     route {
-        cidr_block = "0.0.0.0/0"
-        gateway_id = "igw-020137cb7a73cf3f2"
+        cidr_block = "0.0.0.0/24"
+        gateway_id = aws_internet_gateway.midterm-igw.id
     }
     tags = {
         "Name" = "midterm-rtb-public"
@@ -14,7 +14,8 @@ resource "aws_route_table" "midterm-rtb-public" {
 resource "aws_route_table" "midterm-rtb-private1-us-east-1a" {
     vpc_id     = aws_vpc.midterm-vpc.id
     route {
-        cidr_block = "0.0.0.0/0"
+        cidr_block = "0.0.0.0/24"
+        gateway_id = aws_nat_gateway.midterm-nat-public1-us-east-1a.id
     }
     tags = {
         "Name" = "midterm-rtb-private1-us-east-1a"
@@ -25,7 +26,8 @@ resource "aws_route_table" "midterm-rtb-private1-us-east-1a" {
 resource "aws_route_table" "midterm-rtb-private2-us-east-1b" {
     vpc_id     = aws_vpc.midterm-vpc.id
     route {
-        cidr_block = "0.0.0.0/0"
+        cidr_block = "0.0.0.0/24"
+        gateway_id = aws_nat_gateway.midterm-nat-public1-us-east-1a.id
     }
     tags = {
         "Name" = "midterm-rtb-private2-us-east-1b"

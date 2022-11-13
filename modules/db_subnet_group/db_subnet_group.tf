@@ -1,4 +1,4 @@
-resource "aws_db_subnet_group" "dsg" {
+resource "aws_db_subnet_group" "db_subnet_group" {
   name = "tutorial-db-subnet-group"
   description = "Tutorial DB Subnet Group"
   # vpc: "midterm-vpc" (vpc-identifier)
