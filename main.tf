@@ -77,17 +77,24 @@ module "db_subnet_group" {
   source = "./modules/db_subnet_group"
 }
 
-# 6 Now lets create a DB instance
-#################################
-# module "db_instance" {
-#   source = "./modules/db_instance"
-# }
+## 6 Now lets create a DB instance
+##################################
+module "db_instance" {
+  subnet_private1_id = module.network.subnet_private1_id
+  subnet_private2_id = module.network.subnet_private2_id
+  db_security_group_id = module.db_security_group.db_security_group_id
+  source = "./modules/db_instance"
+}
 
 # 7 Now create an ec2 instance and install a web server
 #######################################################
-# module "ec2_instance" {
-#   source = "./modules/ec2_instance"
-# }
+module "ec2_instance" {
+  webserver_security_group_id = module.webserver_security_group.webserver_security_group_id
+  subnet_public1_id = module.network.subnet_private1_id
+  role_name = module.prerequistes.role_name
+  vpc_id = module.network.vpc_id
+  source = "./modules/ec2_instance"
+}
 
 
 # 8 Connect your apache web server to your db instance
