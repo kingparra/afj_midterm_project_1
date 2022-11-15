@@ -90,7 +90,7 @@ module "db_instance" {
 #######################################################
 module "ec2_instance" {
   webserver_security_group_id = module.webserver_security_group.webserver_security_group_id
-  subnet_public1_id = module.network.subnet_private1_id
+  subnet_public1_id = module.network.subnet_public1_id
   role_name = module.prerequistes.role_name
   vpc_id = module.network.vpc_id
   source = "./modules/ec2_instance"
@@ -99,3 +99,4 @@ module "ec2_instance" {
 
 # 8 Connect your apache web server to your db instance
 ######################################################
+# This part I'll do manually.
