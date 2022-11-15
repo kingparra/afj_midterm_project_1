@@ -7,7 +7,7 @@ resource "aws_route_table_association" "midterm-rtb-public-rtbassoc-041bd566420f
 # Associate route table
 resource "aws_route_table_association" "midterm-rtb-public-rtbassoc-09d3e79eb1af2a84a" {
     route_table_id = aws_route_table.midterm-rtb-public.id
-    subnet_id = aws_subnet.subnet-public-1.id
+    subnet_id = aws_subnet.midterm-subnet-public-1.id
 }
 
 # Associate route table
