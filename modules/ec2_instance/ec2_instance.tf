@@ -18,7 +18,7 @@ resource "tls_private_key" "key_pair_precision" {
   rsa_bits  = 4096
 }
 
-# Use terraform output -raw private_key to view this
+# Use "terraform output -raw private_key" to view this
 # from the cli, in order to download it to ~/.ssh/
 resource "aws_key_pair" "aws_key_pair_precision" {
   key_name = "precision"
@@ -30,7 +30,7 @@ resource "aws_instance" "web" {
   instance_type = "t2.micro"
   subnet_id = var.subnet_public1_id
   associate_public_ip_address = true
-  security_groups = [var.webserver_security_group_id]
+  vpc_security_group_ids = [var.webserver_security_group_id]
   # How do I associate the role with the instance?
   iam_instance_profile = aws_iam_instance_profile.webserver_profile.name
   user_data = <<EOF

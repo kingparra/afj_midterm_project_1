@@ -12,5 +12,5 @@ variable "labname" {
 }
 
 variable "session" {
-  default = "2"
+  default = "4"
 }

@@ -39,7 +39,7 @@ resource "aws_db_instance" "default" {
   # allocated_storage argument value if autoscaling occurs."
   #
   network_type = "IPV4"
-  db_subnet_group_name = "tutorial-db-subnet-group"
+  db_subnet_group_name = var.db_subnet_group_name
   publicly_accessible = false
   # existing vpc security groups: tutorial-db-securitygroup
   vpc_security_group_ids = [var.db_security_group_id]
@@ -48,5 +48,6 @@ resource "aws_db_instance" "default" {
   # initial database name: midtermdb
   db_name = "midtermdb"
   parameter_group_name = "default.mysql5.7"
+  skip_final_snapshot = true
 }
 

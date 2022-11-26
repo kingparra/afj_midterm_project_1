@@ -80,8 +80,7 @@ module "db_subnet_group" {
 ## 6 Now lets create a DB instance
 ##################################
 module "db_instance" {
-  subnet_private1_id = module.network.subnet_private1_id
-  subnet_private2_id = module.network.subnet_private2_id
+  db_subnet_group_name = module.db_subnet_group.db_subnet_group_name
   db_security_group_id = module.db_security_group.db_security_group_id
   source = "./modules/db_instance"
 }
